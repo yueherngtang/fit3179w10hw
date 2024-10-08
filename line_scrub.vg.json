@@ -3,6 +3,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/yueherngtang/fit3179w10hw/refs/heads/master/Unemployment%20Rate%20by%20states.csv"
     },
+    "background": "transparent",
     "transform":[
        {
             "calculate": "format(datum.unemployment_rate, '.1f') + '%' ",
@@ -11,7 +12,7 @@
     ],
     "vconcat": [
       {
-        "width": "container",
+        "width": 650,
         "height": 100,
         "title": "Use this line chart to filter the data based on time",
         "mark": {
@@ -49,8 +50,8 @@
         ]
       },
       {
-        "width": "container",
-        "height": 200,
+        "width": 650,
+        "height": 400,
         "title": "Unemployment Rate by State",
         "mark": {
           "type": "line", 
