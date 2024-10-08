@@ -237,6 +237,32 @@
             }
           }
         ]
+      },
+      {
+        "type": "group",
+        "from": {"data": "states"},
+        "marks": [
+          {
+            "type": "line",
+            "from": {"data": "fields"},
+            "encode": {
+              "enter": {
+                "x": {"scale": "ord", "field": "data"},
+                "y": {
+                  "scale": {"datum": "data"},
+                  "field": {"parent": {"datum": "data"}}
+                },
+                "stroke": {"value": "transparent"},
+                "strokeWidth": {"value": 7}
+              },
+              "update": {
+                "tooltip": {
+                  "signal": "{'Country': parent.state, 'Metric': datum.data === 'mean_eti_ratio' ? 'Expenditure to Income Ratio' : datum.data === 'median_income' ? 'Median Income' : datum.data === 'median_expenditure' ? 'Median Expenditure' : datum.data === 'absolute_poverty' ? 'Poverty Rate' : datum.data === 'unemployment_rate' ? 'Unemployment Rate' : datum.data, 'Value': datum.data === 'mean_eti_ratio' ? format(parent[datum.data], '.2f') + '%' : datum.data === 'median_income' || datum.data === 'median_expenditure' ? 'RM' + format(parent[datum.data], '.2f') : format(parent[datum.data], '.2f') + '%'}"
+                }
+              }
+            }
+          }
+        ]
       }
     ]
   }
